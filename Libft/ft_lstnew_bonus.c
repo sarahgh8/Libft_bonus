@@ -6,7 +6,7 @@
 /*   By: sghunmin <sghunmin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/06 17:33:29 by sghunmin          #+#    #+#             */
-/*   Updated: 2026/01/06 17:36:18 by sghunmin         ###   ########.fr       */
+/*   Updated: 2026/01/06 19:26:28 by sghunmin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,11 @@
 t_list	*ft_lstnew(void *content)
 {
 	t_list	*new_node;
-	
-	new_node = mallloc(sizeof(t_list *));
-	if(!new_node)
-		return NULL;
+
+	new_node = malloc(sizeof(t_list));
+	if (!new_node)
+		return (NULL);
 	new_node->content = content;
-	new_node->content = NULL;
-	return new_node;
+	new_node->next = NULL;
+	return (new_node);
 }

@@ -6,7 +6,7 @@
 /*   By: sghunmin <sghunmin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/30 17:13:51 by sghunmin          #+#    #+#             */
-/*   Updated: 2026/01/06 17:32:33 by sghunmin         ###   ########.fr       */
+/*   Updated: 2026/01/06 21:12:09 by sghunmin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ typedef struct s_intialVal
 
 typedef struct s_list
 {
-	void	*content;
+	void			*content;
 	struct s_list	*next;
 }	t_list;
 
@@ -66,5 +66,14 @@ void		ft_putchar_fd(char c, int fd);
 char		*ft_strnstr(const char *big, const char *little, size_t len);
 void		ft_striteri(char *s, void (*f)(unsigned int, char *));
 char		*ft_strmapi(char const *s, char (*f)(unsigned int, char));
+void		ft_lstadd_back(t_list **lst, t_list *new);
+void		ft_lstadd_front(t_list **lst, t_list *new);
+void		ft_lstclear(t_list **lst, void (*del)(void*));
+void		ft_lstdelone(t_list *lst, void (*del)(void*));
+void		ft_lstiter(t_list *lst, void (*f)(void *));
+t_list		*ft_lstlast(t_list *lst);
+t_list		*ft_lstnew(void *content);
+t_list		*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+int			ft_lstsize(t_list *lst);
 
 #endif
